@@ -2,10 +2,28 @@
 
 {% block content %}
 
+<br/>
+
+{% if area %}
+	{{ area }}
+{% endif %}
 
 
-<h1> Zzzzzzz </h1>
+{% if api %}
+	{% if api.status == 'error' %}
+		Uknown area, please try again.
+	{% else %}
 
+	<div class="jumbotron {{ category_color }}">
+		<h1 class="display-4">
+			{{ category }}		
+		</h1>
+		<p class="lead">Current Air Quality: {{ api.data.aqi }} <br/>
+			{{ api.data.city.name}}</p>
+		
+		{{ category_description }}
+		
+	{% endif %}
+{% endif %}
 
 {% endblock %}
- 

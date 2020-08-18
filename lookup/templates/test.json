@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<h1> Good Day </h1>
+<br/>
+
+{% if api %}
+	{% if api == "Error..." %}
+		There was an issue with the API, please try again
+	{% else %}
+		{{ api }} <br/><br/>
+
+		{{ api.data.aqi }}<br/>
+		{{ api.city.name }} <br/>
+
+	{% endif %}
+{% endif %}
+
+{% endblock %}
+ 
+
+ 	<!-- 	Air Quality: {{ api.0.AQI }} <br/> 
+		Area: {{ api.0.ReportingArea }} <br/> 
+		Category: {{ api.0.Category.Name }} <br/> 
+	 -->

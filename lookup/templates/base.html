@@ -8,7 +8,18 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Air Quality App</title>
+
+    <style>
+    	.good {background-color: #009966;}
+    	.moderate {background-color: #ffde33;}
+    	.usg {background-color: #ff9933;}	
+		.unhealthy {background-color: #cc0033;}
+		.veryunhealthy {background-color: #990066;}	
+		.hazardous {background-color: #7e0023;}	
+    </style>
+
+
   </head>
   <body>
 
@@ -27,9 +38,10 @@
 
 
 		    </ul>
-		    <form class="form-inline my-2 my-lg-0">
-		      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-		      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+		    <form action="{% url 'home' %}" class="form-inline my-2 my-lg-0" method="POST">
+		    	{% csrf_token %}
+		      <input class="form-control mr-sm-2" type="search" placeholder="Search City" aria-label="Search" name="area">
+		      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Lookup</button>
 		    </form>
 		  </div>
 		</nav>
