@@ -7,8 +7,9 @@ def home(request):
 
 	if request.method == "POST":
 		area = request.POST['area']
-		api_request = requests.get('https://api.waqi.info/feed/'+ area +'/?token=bc16ea6842ec712924566bbb68610a595bcc30c4')
-		
+		api_request = requests.get('https://api.waqi.info/feed/'+ area +'/?token=*********')
+		# API key goes in **** above
+
 		try:
 			api = json.loads(api_request.content)
 
@@ -49,8 +50,9 @@ def home(request):
 			})
 
 	else:
-		api_request = requests.get('https://api.waqi.info/feed/london/?token=bc16ea6842ec712924566bbb68610a595bcc30c4')
-		
+		api_request = requests.get('https://api.waqi.info/feed/london/?token=*****')
+		# API key goes in **** above
+
 		try:
 			api = json.loads(api_request.content)
 
